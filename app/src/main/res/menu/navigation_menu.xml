@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/nav_account"
+        android:title="My Account"
+        android:icon="@mipmap/ic_person_black_24dp"/>
+    <item android:id="@+id/nav_package"
+        android:title="Packs"
+        android:icon="@mipmap/ic_card_giftcard_black_24dp"/>
+    <item android:id="@+id/nav_recharge"
+        android:title="Recharge"
+        android:icon="@mipmap/ic_payment_black_24dp"/>
+    <item android:id="@+id/nav_offers"
+        android:title="Offers and Discounts"
+        android:icon="@mipmap/ic_local_offer_black_24dp"/>
+    <item android:id="@+id/nav_transfer"
+        android:title="Transfer"
+        android:icon="@mipmap/ic_local_shipping_black_24dp"/>
+    <item android:id="@+id/nav_logout"
+        android:title="Log Out"
+        android:icon="@mipmap/ic_power_settings_new_black_24dp"/>
+
+</menu>
