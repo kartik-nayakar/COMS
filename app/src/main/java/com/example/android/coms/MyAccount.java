@@ -1,18 +1,11 @@
 package com.example.android.coms;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import static android.R.attr.name;
-import static com.example.android.coms.R.id.text;
-import static com.example.android.coms.R.id.textView11;
-import static com.example.android.coms.UserDetails.getName;
 
 /**
  * Created by Knayak on 28/02/2017.

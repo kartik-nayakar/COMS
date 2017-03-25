@@ -1,6 +1,6 @@
 package com.example.android.coms;
 
-import android.app.Fragment;
+
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -9,7 +9,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -18,22 +17,16 @@ public class HomeActivity extends AppCompatActivity {
     private FragmentTransaction fragmentTransaction;
     private NavigationView navigationView;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_container, new MyAccount()).commit();
-
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_container, new Home()).commit();
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -46,6 +39,13 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected (MenuItem item) {
 
                 switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container, new Home()).commit();
+                        getSupportActionBar().setTitle("Home");
+                        mDrawerLayout.closeDrawers();
+                        break;
+
                     case R.id.nav_account:
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container, new MyAccount()).commit();

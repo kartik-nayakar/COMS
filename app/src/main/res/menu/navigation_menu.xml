@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@mipmap/ic_home_black_24dp"/>
     <item android:id="@+id/nav_account"
         android:title="My Account"
         android:icon="@mipmap/ic_person_black_24dp"/>
@@ -7,7 +10,7 @@
         android:title="Packs"
         android:icon="@mipmap/ic_card_giftcard_black_24dp"/>
     <item android:id="@+id/nav_recharge"
-        android:title="Recharge"
+        android:title="Quick Recharge"
         android:icon="@mipmap/ic_payment_black_24dp"/>
     <item android:id="@+id/nav_offers"
         android:title="Offers and Discounts"

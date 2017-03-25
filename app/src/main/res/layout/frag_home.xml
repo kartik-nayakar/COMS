@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bMyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:text="My Account"
+        android:background="@drawable/round_button"
+        android:layout_alignBaseline="@+id/bPacks"
+        android:layout_alignBottom="@+id/bPacks"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/bPacks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Packs"
+        android:background="@drawable/round_button"
+        android:layout_above="@+id/bOffers"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="31dp" />
+
+    <Button
+        android:id="@+id/bRecharge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quick Recharge"
+        android:background="@drawable/round_button"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/bMyAccount"
+        android:layout_alignStart="@+id/bMyAccount" />
+
+    <Button
+        android:id="@+id/bOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Offers"
+        android:background="@drawable/round_button"
+        android:layout_alignBaseline="@+id/bRecharge"
+        android:layout_alignBottom="@+id/bRecharge"
+        android:layout_alignLeft="@+id/bPacks"
+        android:layout_alignStart="@+id/bPacks" />
+
+    <Button
+        android:id="@+id/bTransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transfer"
+        android:background="@drawable/round_button"
+        android:layout_alignBaseline="@+id/bLogout"
+        android:layout_alignBottom="@+id/bLogout"
+        android:layout_alignLeft="@+id/bRecharge"
+        android:layout_alignStart="@+id/bRecharge" />
+
+    <Button
+        android:id="@+id/bLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:text="Logout :'("
+        android:layout_below="@+id/bOffers"
+        android:layout_alignLeft="@+id/bOffers"
+        android:layout_alignStart="@+id/bOffers"
+        android:layout_marginTop="26dp" />
+
+</RelativeLayout>
