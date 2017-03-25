@@ -10,16 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import static com.example.android.coms.R.id.etPassword;
-import static com.example.android.coms.R.id.tvRegister;
 
 public class RegisterActivity extends AppCompatActivity {
     private ProgressBar spinner;
