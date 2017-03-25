@@ -28,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword= (EditText) findViewById(R.id.etPassword);
 
         final Button bLogin= (Button) findViewById(R.id.bLogin);
+        spinner = (ProgressBar)findViewById(R.id.progressBar);
+        spinner.setVisibility(View.GONE);
         final TextView tvRegister = (TextView) findViewById(R.id.tvRegister);
 
         tvRegister.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
+                spinner.setVisibility(View.VISIBLE);
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override
@@ -69,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                                 ud.address=address;
                                 //*********************
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                spinner.setVisibility(View.GONE);
                                 LoginActivity.this.startActivity(intent);
                                 finish();
 
@@ -84,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
+                                spinner.setVisibility(View.GONE);
                             }
 
                         } catch (JSONException e) {
