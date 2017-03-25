@@ -46,7 +46,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
+                //***** displaying spinner
                 spinner.setVisibility(View.VISIBLE);
+                //*****
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override

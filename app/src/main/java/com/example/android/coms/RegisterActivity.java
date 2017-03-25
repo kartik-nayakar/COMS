@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -17,11 +18,11 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.android.coms.R.id.bBack;
 import static com.example.android.coms.R.id.etPassword;
 import static com.example.android.coms.R.id.tvRegister;
 
 public class RegisterActivity extends AppCompatActivity {
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,8 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etAddress= (EditText) findViewById(R.id.etAddress);
 
         final Button bRegister = (Button) findViewById(R.id.bRegister);
-        final Button bBack = (Button) findViewById(R.id.bBack);
+        spinner = (ProgressBar)findViewById(R.id.progressBar2);
+        spinner.setVisibility(View.GONE);
 
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
                 final String email = etEmail.getText().toString();
                 final String address = etAddress.getText().toString();
 
+                spinner.setVisibility(View.VISIBLE);
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override
@@ -58,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             if(success) {
                                 Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                spinner.setVisibility(View.GONE);
                                 RegisterActivity.this.startActivity(loginIntent);
                                 finish();
 
@@ -86,12 +91,5 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        bBack.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
-                RegisterActivity.this.startActivity(loginIntent);
-
-            }
-        });
     }
 }
