@@ -59,6 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if(success) {
                                 Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 RegisterActivity.this.startActivity(loginIntent);
+                                finish();
 
                                 Context context = getApplicationContext();
                                 CharSequence text = "Registerd Successfully!";

@@ -8,19 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.ResponseCache;
-
 public class LoginActivity extends AppCompatActivity {
+    private ProgressBar spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
-
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override
@@ -56,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
 
                             if(success) {
-                                // ********************
+                                // ******************** Getting uer data from DB and saving it in UserDetails class
                                 String name = jsonResponse.getString("name");
                                 String username = jsonResponse.getString("username");
                                 String password = jsonResponse.getString("password");
@@ -71,7 +68,6 @@ public class LoginActivity extends AppCompatActivity {
                                 ud.email=email;
                                 ud.address=address;
                                 //*********************
-
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 LoginActivity.this.startActivity(intent);
                                 finish();
@@ -82,10 +78,9 @@ public class LoginActivity extends AppCompatActivity {
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 toast.show();
-
                             }else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                builder.setMessage("Login Failed!")
+                                builder.setMessage("Invalid Username or Password!")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
