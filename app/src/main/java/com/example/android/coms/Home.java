@@ -22,19 +22,14 @@ public class Home extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
                 Button bLogout = (Button) view.findViewById(R.id.bLogout);
                 bLogout.setOnClickListener(this);
-
                 Button bMyAccount = (Button) view.findViewById(R.id.bMyAccount);
                 bMyAccount.setOnClickListener(this);
-
                 Button bPacks = (Button) view.findViewById(R.id.bPacks);
                 bPacks.setOnClickListener(this);
-
                 Button bRecharge = (Button) view.findViewById(R.id.bRecharge);
                 bRecharge.setOnClickListener(this);
-
                 Button bOffers = (Button) view.findViewById(R.id.bOffers);
                 bOffers.setOnClickListener(this);
-
                 Button bTransfer = (Button) view.findViewById(R.id.bTransfer);
                 bTransfer.setOnClickListener(this);
 
@@ -47,6 +42,7 @@ public class Home extends Fragment implements View.OnClickListener {
             case R.id.bLogout:
                 Intent myIntent = new Intent(getActivity(), LoginActivity.class);
                 getActivity().startActivity(myIntent);
+                getActivity().finish();
                 break;
             case R.id.bMyAccount:
                 MyAccount account= new MyAccount();

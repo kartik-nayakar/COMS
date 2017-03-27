@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/packages">
@@ -15,17 +16,15 @@
         android:id="@+id/textView" />
 
     <TextView
-        android:text="Select Product:"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="21dp"
-        android:textSize="18dp"
-        android:id="@+id/textView3"
         android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="32dp"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2"
+        android:text="Select Product:"
+        android:textSize="18dp" />
 
     <View
         android:layout_width="match_parent"
@@ -36,12 +35,12 @@
         android:text="Select Region:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
         android:textSize="18dp"
         android:id="@+id/textView4"
-        android:layout_below="@+id/radioButton"
+        android:layout_below="@+id/textView3"
         android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="22dp" />
 
     <View
         android:layout_width="match_parent"
@@ -52,175 +51,152 @@
         android:text="Select Packs:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
         android:textSize="18dp"
-        android:id="@+id/textView5" />
+        android:id="@+id/textView5"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/checkBox5"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
-    <CheckBox
-        android:text="Marathi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:id="@+id/checkBox3"
-        android:layout_below="@+id/checkBox"
-        android:layout_alignLeft="@+id/checkBox"
-        android:layout_alignStart="@+id/checkBox" />
-
-    <CheckBox
-        android:text="Malayalam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox5"
-        android:layout_above="@+id/textView5"
-        android:layout_alignLeft="@+id/checkBox3"
-        android:layout_alignStart="@+id/checkBox3"
-        android:layout_marginBottom="14dp" />
-
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_packs"
         android:layout_alignTop="@+id/textView5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/checkBox5"
-        android:layout_alignStart="@+id/checkBox5" />
+        android:layout_alignStart="@+id/checkBox5"
+        android:layout_alignRight="@+id/checkBox6"
+        android:layout_alignEnd="@+id/checkBox6" />
 
     <TextView
-        android:text="Pay:"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5"
-        android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:id="@+id/textView6" />
-
-    <RadioButton
-        android:text="1 Month"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:id="@+id/radioButton3"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6" />
-
-    <RadioButton
-        android:text="6 Months"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton6"
-        android:layout_alignBaseline="@+id/radioButton3"
-        android:layout_alignBottom="@+id/radioButton3"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
-
-    <RadioButton
-        android:text="12 Months"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton7"
-        android:layout_alignBaseline="@+id/radioButton4"
-        android:layout_alignBottom="@+id/radioButton4"
-        android:layout_alignLeft="@+id/radioButton6"
-        android:layout_alignStart="@+id/radioButton6" />
+        android:layout_below="@+id/spinner_packs"
+        android:layout_marginTop="26dp"
+        android:text="Pay for:"
+        android:textSize="18dp" />
 
     <Button
         android:text="Pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp" />
 
-    <RadioButton
-        android:text="2 Months"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton4"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/radioButton3"
-        android:layout_alignLeft="@+id/radioButton3"
-        android:layout_alignStart="@+id/radioButton3" />
-
-    <RadioButton
-        android:text="3 Months"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton5"
-        android:layout_below="@+id/radioButton4"
-        android:layout_alignLeft="@+id/radioButton4"
-        android:layout_alignStart="@+id/radioButton4"
-        android:layout_marginTop="14dp" />
-
-    <RadioButton
-        android:text="SD+"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton"
-        android:layout_alignBaseline="@+id/textView3"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2" />
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/radioButton"
+            android:layout_alignLeft="@+id/radioGroup"
+            android:layout_alignStart="@+id/radioGroup"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="50dp"
+            android:text="SD" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/button2"
+            android:layout_alignRight="@+id/button2"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_marginLeft="5dp"
+            android:text="HD" />
+
+
+    </RadioGroup>
 
     <CheckBox
-        android:text="English"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/checkBox"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/radioButton"
-        android:layout_alignStart="@+id/radioButton" />
-
-    <CheckBox
-        android:text="Telugu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox6"
-        android:layout_alignBaseline="@+id/checkBox5"
-        android:layout_alignBottom="@+id/checkBox5"
-        android:layout_toRightOf="@+id/checkBox5"
-        android:layout_toEndOf="@+id/checkBox5"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        android:text="English"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignLeft="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup" />
 
     <CheckBox
-        android:text="Tamil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox4"
-        android:layout_alignBaseline="@+id/checkBox3"
-        android:layout_alignBottom="@+id/checkBox3"
-        android:layout_alignLeft="@+id/checkBox6"
-        android:layout_alignStart="@+id/checkBox6" />
-
-    <CheckBox
-        android:text="Hindi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/checkBox2"
-        android:layout_above="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hindi"
+        android:layout_alignBaseline="@+id/checkBox"
+        android:layout_alignBottom="@+id/checkBox"
         android:layout_alignLeft="@+id/checkBox4"
         android:layout_alignStart="@+id/checkBox4" />
 
-    <RadioButton
-        android:text="HD+"
+    <CheckBox
+        android:id="@+id/checkBox3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton2"
-        android:layout_alignBaseline="@+id/radioButton"
-        android:layout_alignBottom="@+id/radioButton"
-        android:layout_alignLeft="@+id/checkBox2"
-        android:layout_alignStart="@+id/checkBox2" />
+        android:text="Marathi"
+        android:layout_alignBaseline="@+id/checkBox4"
+        android:layout_alignBottom="@+id/checkBox4"
+        android:layout_alignLeft="@+id/checkBox"
+        android:layout_alignStart="@+id/checkBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tamil"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignLeft="@+id/checkBox6"
+        android:layout_alignStart="@+id/checkBox6"
+        android:layout_marginTop="16dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Malayalam"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignLeft="@+id/checkBox3"
+        android:layout_alignStart="@+id/checkBox3"
+        android:layout_marginTop="18dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telugu"
+        android:layout_alignBaseline="@+id/checkBox5"
+        android:layout_alignBottom="@+id/checkBox5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <Spinner
+        android:id="@+id/pay_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/spinner_packs"
+        android:layout_alignLeft="@+id/spinner_packs"
+        android:layout_alignRight="@+id/spinner_packs"
+        android:layout_alignStart="@+id/spinner_packs"
+        android:layout_alignTop="@+id/textView6" />
 
 </RelativeLayout>

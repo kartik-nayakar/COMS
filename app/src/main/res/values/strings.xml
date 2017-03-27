@@ -3,4 +3,14 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="months_array">
+        <item>---Months---</item>
+        <item>1 Month</item>
+        <item>2 Months</item>
+        <item>3 Months</item>
+        <item>6 Months</item>
+        <item>12 Months</item>
+    </string-array>
+
 </resources>
