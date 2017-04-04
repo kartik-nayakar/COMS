@@ -47,28 +47,47 @@ public class RegisterActivity extends AppCompatActivity {
                 final String email = etEmail.getText().toString();
                 final String address = etAddress.getText().toString();
                 //**********   Error for null values on text fields
-                if(TextUtils.isEmpty(name)) {
-                    etName.setError("This field can't be empty");
-                }
+                if(TextUtils.isEmpty(name) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)
+                        || TextUtils.isEmpty(mob_num) || TextUtils.isEmpty(email) || TextUtils.isEmpty(address)
+                        || name.length()<8 || username.length()<3 ||password.length() <6 || mob_num.length()<10
+                        || !(android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) || address.length() <15) {
 
-                if(TextUtils.isEmpty(username)) {
-                    etUserName.setError("This field can't be empty");
-                }
+                    if (TextUtils.isEmpty(name)) {
+                        etName.setError("This field can't be empty");
+                    } else if (name.length() < 8) {
+                        etName.setError("You must have atleast 8 characters in your name");
+                    }
 
-                if(TextUtils.isEmpty(password)) {
-                    etPassword.setError("This field can't be empty");
-                }
+                    if (TextUtils.isEmpty(username)) {
+                        etUserName.setError("This field can't be empty");
+                    } else if (username.length() < 3) {
+                        etUserName.setError("You must have atleast 3 characters in your username");
+                    }
 
-                if(TextUtils.isEmpty(mob_num)) {
-                    etMobileNumber.setError("This field can't be empty");
-                }
+                    if (TextUtils.isEmpty(password)) {
+                        etPassword.setError("This field can't be empty");
+                    } else if (password.length() < 6) {
+                        etPassword.setError("You must have atleast 6 characters in your password");
+                    }
 
-                if(TextUtils.isEmpty(email)) {
-                    etEmail.setError("This field can't be empty");
-                }
+                    if (TextUtils.isEmpty(mob_num)) {
+                        etMobileNumber.setError("This field can't be empty");
+                    } else if (mob_num.length() < 10) {
+                        etMobileNumber.setError("Provide a valid mobile number");
+                    }
 
-                if(TextUtils.isEmpty(address)) {
-                    etAddress.setError("This field can't be empty");
+                    if (TextUtils.isEmpty(email)) {
+                        etEmail.setError("This field can't be empty");
+                    } else if (!(android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
+                        etEmail.setError("Invalid Email id");
+                    }
+
+                    if (TextUtils.isEmpty(address)) {
+                        etAddress.setError("This field can't be empty");
+                    } else if (address.length() < 15) {
+                        etAddress.setError("Address too small");
+                    }
+
                 }
                 //**********
                 else {

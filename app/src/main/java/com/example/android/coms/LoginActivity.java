@@ -37,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                etUsername.getText().clear();
+                etPassword.getText().clear();
                 LoginActivity.this.startActivity(registerIntent);
             }
         });
@@ -88,12 +90,13 @@ public class LoginActivity extends AppCompatActivity {
                                     toast.show();
                                     //*******************
                                 } else {
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                    builder.setMessage("Login Failed!")
-                                            .setNegativeButton("Retry", null)
-                                            .create()
-                                            .show();
-                                    cprogress.setVisibility(View.GONE);
+                                            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                            builder.setMessage("Invalid Username or Password!")
+                                                    .setNegativeButton("Retry", null)
+                                                    .create()
+                                                    .show();
+                                            cprogress.setVisibility(View.GONE);
+
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
