@@ -3,6 +3,8 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="change_details">Change Details</string>
+    <string name="ok_text">OK</string>
 
     <string-array name="months_array">
         <item>---Months---</item>

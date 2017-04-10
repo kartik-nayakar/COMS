@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                                 boolean success = jsonResponse.getBoolean("success");
                                 if (success) {
                                     // ******************** Getting user data from DB and saving it in UserDetails class
+                                    int juser = jsonResponse.getInt("user_id");
                                     String jname = jsonResponse.getString("name");
                                     String jusername = jsonResponse.getString("username");
                                     String jpassword = jsonResponse.getString("password");
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                                     String jemail = jsonResponse.getString("email");
                                     String jaddress = jsonResponse.getString("address");
                                     UserDetails ud = new UserDetails();
+                                    ud.user_id = juser;
                                     ud.name = jname;
                                     ud.username = jusername;
                                     ud.password = jpassword;

@@ -5,8 +5,12 @@ package com.example.android.coms;
  */
 
 public class UserDetails {
-     static String name,username,password,email,address;
-     static long mob_num;
+     static String name, username, password, email, address;
+     static long user_id, mob_num;
+
+    public static long getUser_id() {
+        return user_id;
+    }
 
     public static String getName() {
         return name;

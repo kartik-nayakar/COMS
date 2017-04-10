@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Change Details"
+        android:textSize="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="Name:"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_below="@+id/textView23"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView24"
+        android:layout_alignStart="@+id/textView24"
+        android:layout_below="@+id/textView24"
+        android:layout_marginTop="37dp"
+        android:text="Username:" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView25"
+        android:layout_alignStart="@+id/textView25"
+        android:layout_below="@+id/textView25"
+        android:layout_marginTop="39dp"
+        android:text="Password" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView26"
+        android:layout_alignStart="@+id/textView26"
+        android:layout_below="@+id/textView26"
+        android:layout_marginTop="38dp"
+        android:text="Mobile Number:" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Id:"
+        android:layout_alignBaseline="@+id/etChangeEmail"
+        android:layout_alignBottom="@+id/etChangeEmail"
+        android:layout_alignLeft="@+id/textView27"
+        android:layout_alignStart="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address:"
+        android:layout_alignBaseline="@+id/etChangeAddress"
+        android:layout_alignBottom="@+id/etChangeAddress"
+        android:layout_alignRight="@+id/textView28"
+        android:layout_alignEnd="@+id/textView28" />
+
+    <EditText
+        android:id="@+id/etChangeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/textView24"
+        android:layout_alignBottom="@+id/textView24"
+        android:layout_alignLeft="@+id/textView23"
+        android:layout_alignStart="@+id/textView23"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp" />
+
+    <EditText
+        android:id="@+id/etChangeUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView25"
+        android:layout_alignBottom="@+id/textView25"
+        android:layout_alignLeft="@+id/etChangeName"
+        android:layout_alignStart="@+id/etChangeName"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etChangePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView26"
+        android:layout_alignBottom="@+id/textView26"
+        android:layout_alignLeft="@+id/etChangeUsername"
+        android:layout_alignStart="@+id/etChangeUsername"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignRight="@+id/etChangeUsername"
+        android:layout_alignEnd="@+id/etChangeUsername" />
+
+    <EditText
+        android:id="@+id/etChangeMobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_alignBaseline="@+id/textView27"
+        android:layout_alignBottom="@+id/textView27"
+        android:layout_alignLeft="@+id/etChangePassword"
+        android:layout_alignStart="@+id/etChangePassword" />
+
+    <EditText
+        android:id="@+id/etChangeEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/etChangeMobileNumber"
+        android:layout_alignLeft="@+id/etChangeMobileNumber"
+        android:layout_alignStart="@+id/etChangeMobileNumber" />
+
+    <EditText
+        android:id="@+id/etChangeAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:layout_below="@+id/etChangeEmail"
+        android:layout_alignLeft="@+id/etChangeEmail"
+        android:layout_alignStart="@+id/etChangeEmail" />
+
+    <Button
+        android:id="@+id/bChangeSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Save"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="47dp"
+        android:layout_marginEnd="47dp" />
+
+    <Button
+        android:id="@+id/bChangeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bChangeSave"
+        android:layout_toLeftOf="@+id/etChangePassword"
+        android:layout_toStartOf="@+id/etChangePassword"
+        android:text="Back" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etChangeAddress"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

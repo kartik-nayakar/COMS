@@ -12,18 +12,18 @@
         android:layout_toLeftOf="@+id/editText9"
         android:layout_toStartOf="@+id/editText9"
         android:layout_marginBottom="76dp"
-        android:id="@+id/button3" />
+        android:id="@+id/bChangePack" />
 
     <Button
-        android:text="Make Pay"
+        android:id="@+id/bMakePay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignRight="@+id/editText9"
+        android:layout_alignBottom="@+id/bChangePack"
         android:layout_alignEnd="@+id/editText9"
-        android:layout_marginRight="34dp"
+        android:layout_alignRight="@+id/editText9"
         android:layout_marginEnd="34dp"
-        android:id="@+id/button4" />
+        android:layout_marginRight="34dp"
+        android:text="Make Pay" />
 
     <TextView
         android:text="Package Name:"
@@ -56,7 +56,7 @@
         android:ems="10"
         android:id="@+id/editText9"
         android:hint="MobNo"
-        android:layout_above="@+id/button3"
+        android:layout_above="@+id/bChangePack"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="97dp" />
