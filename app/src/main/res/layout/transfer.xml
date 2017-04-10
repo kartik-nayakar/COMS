@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/transfer">
 
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Transfer Fragment" />
-</LinearLayout>
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Transfer Details"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/etNewAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:layout_below="@+id/textView33"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/etReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etNewAddress"
+        android:layout_alignStart="@+id/etNewAddress"
+        android:layout_below="@+id/etNewAddress"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/bRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Request"
+        android:layout_below="@+id/etReason"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:text="Enter New Address:"
+        android:layout_above="@+id/etReason"
+        android:layout_alignLeft="@+id/etNewAddress"
+        android:layout_alignStart="@+id/etNewAddress" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etReason"
+        android:layout_alignStart="@+id/etReason"
+        android:layout_below="@+id/etNewAddress"
+        android:layout_marginTop="37dp"
+        android:text="Reason(Optional):" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_below="@+id/etReason"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

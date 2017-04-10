@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_marginTop="32dp"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2"
+        android:layout_toLeftOf="@+id/bPay"
+        android:layout_toStartOf="@+id/bPay"
         android:text="Select Product:"
         android:textSize="18dp" />
 
@@ -88,7 +88,7 @@
         android:text="Pay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/bPay"
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="61dp" />
@@ -119,8 +119,8 @@
             android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/button2"
-            android:layout_alignRight="@+id/button2"
+            android:layout_alignEnd="@+id/bPay"
+            android:layout_alignRight="@+id/bPay"
             android:layout_alignTop="@+id/textView3"
             android:layout_marginLeft="5dp"
             android:text="HD" />
