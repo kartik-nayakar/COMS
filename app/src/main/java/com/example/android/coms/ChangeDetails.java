@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +77,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                 fragmentTransaction.commit();
                 break;
             case R.id.bChangeSave:
+                cprogress.setVisibility(View.VISIBLE);
                //************** Updating user details in database
                 long user_id= UserDetails.getUser_id();
                     String name = etChangeName.getText().toString();
@@ -84,6 +86,21 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                     String mob_num = etChangeMobileNumber.getText().toString();
                     String email = etChangeEmail.getText().toString();
                     String address = etChangeAddress.getText().toString();
+                String uName= UserDetails.getName();
+                String uUserName= UserDetails.getUsername();
+                String uPassword= UserDetails.getPassword();
+                Long uMobNum= UserDetails.getMob_num();
+                String uEmail= UserDetails.getEmail();
+                String uAddress= UserDetails.getAddress();
+                if (uName.equals(name) && uUserName.equals(username) && uPassword.equals(password) && uMobNum.equals(Long.parseLong(mob_num)) && uEmail.equals(email) && uAddress.equals(address)) {
+                    Context context = getContext();
+                    CharSequence text = "No Changes Detected!";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    cprogress.setVisibility(View.GONE);
+                }
+                else {
                     if (TextUtils.isEmpty(name) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)
                             || TextUtils.isEmpty(mob_num) || TextUtils.isEmpty(email) || TextUtils.isEmpty(address)
                             || name.length() < 8 || username.length() < 3 || password.length() < 6 || mob_num.length() < 10
@@ -165,7 +182,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                         RequestQueue queue = Volley.newRequestQueue(getContext());
                         queue.add(changeDetailsRequest);
                     }
-
+                }
                 break;
 
             //**************

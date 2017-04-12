@@ -9,16 +9,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 /**
  * Created by Knayak on 28/02/2017.
  */
 
 public class Packages extends Fragment implements View.OnClickListener{
+    String rbutton;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.packages,container,false);
+        Button bPay = (Button) view.findViewById(R.id.bPay);
+        bPay.setOnClickListener(this);
         //******************* spinner to view Months for payment
         Spinner spinner = (Spinner) view.findViewById(R.id.pay_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -29,8 +37,106 @@ public class Packages extends Fragment implements View.OnClickListener{
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         //*******************
-        Button bPay = (Button) view.findViewById(R.id.bPay);
-        bPay.setOnClickListener(this);
+
+        //*********** Check box
+        CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox);
+        CheckBox checkBox2 = (CheckBox) view.findViewById(R.id.checkBox2);
+        CheckBox checkBox3 = (CheckBox) view.findViewById(R.id.checkBox3);
+        CheckBox checkBox4 = (CheckBox) view.findViewById(R.id.checkBox4);
+        CheckBox checkBox5 = (CheckBox) view.findViewById(R.id.checkBox5);
+        CheckBox checkBox6 = (CheckBox) view.findViewById(R.id.checkBox6);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    arrayList.add("---English---");
+                    arrayList.add("");
+                }
+            }
+        });
+
+        checkBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    arrayList.add("---Hindi---");
+                    arrayList.add("");
+                }
+            }
+        });
+
+        checkBox3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    arrayList.add("---Marathi---");
+                    arrayList.add("");
+                }
+            }
+        });
+
+        checkBox4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    arrayList.add("---Tamil---");
+                    arrayList.add("");
+                }
+            }
+        });
+
+        checkBox5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    arrayList.add("---Malayalam---");
+                    arrayList.add("");
+                }
+            }
+        });
+
+        checkBox6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    arrayList.add("---Telugu---");
+                    arrayList.add("");
+                }
+            }
+        });
+        //************
+
+        //***************** spinner to view channel packs
+    /*    Spinner spinner1 = (Spinner) view.findViewById(R.id.spinner_packs);
+        ArrayList<String> arrayList = new ArrayList<>();
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, );
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(arrayAdapter);
+        spinner1.setSelection(0);
+    */    /// /*****************
+
+        //*********** radio button
+        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                if(checkedId == R.id.radioButton1) {
+                    rbutton = "SD";
+                }else {
+                    rbutton= "HD";
+                }
+            }
+        });
+        //***********
+
         return view;
     }
 

@@ -26,17 +26,17 @@
         android:text="Make Pay" />
 
     <TextView
-        android:text="Package Name:"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="User Id:"
         android:textSize="18dp"
-        android:id="@+id/textView8"
         android:layout_alignBaseline="@+id/editText7"
         android:layout_alignBottom="@+id/editText7"
-        android:layout_toLeftOf="@+id/editText7"
-        android:layout_toStartOf="@+id/editText7"
-        android:layout_marginRight="19dp"
-        android:layout_marginEnd="19dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="59dp" />
 
     <TextView
         android:text="Mobile No:"
@@ -50,27 +50,25 @@
         android:layout_alignStart="@+id/textView8" />
 
     <EditText
+        android:id="@+id/editText9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
-        android:ems="10"
-        android:id="@+id/editText9"
-        android:hint="MobNo"
         android:layout_above="@+id/bChangePack"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="97dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="97dp"
+        android:ems="10"
+        android:inputType="numberSigned" />
 
     <EditText
+        android:id="@+id/editText7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText7"
-        android:hint="Package Name"
         android:layout_above="@+id/editText9"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="16dp" />
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
 </RelativeLayout>

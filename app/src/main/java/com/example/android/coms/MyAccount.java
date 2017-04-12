@@ -22,6 +22,7 @@ public class MyAccount extends Fragment implements View.OnClickListener {
          view.findViewById(R.id.bChangeDetails).setOnClickListener(this);
         //*************   Displaying User Details from database
         UserDetails ud = new UserDetails();
+        Long user_id = ud.getUser_id();
         String name = ud.getName();
         String username = ud.getUsername();
         String password = ud.getPassword();
@@ -29,6 +30,8 @@ public class MyAccount extends Fragment implements View.OnClickListener {
         String email = ud.getEmail();
         String address = ud.getAddress();
 
+        TextView textView31 = (TextView) view.findViewById(R.id.textView31);
+        textView31.setText(user_id+"");
         TextView textView11 = (TextView) view.findViewById(R.id.textView11);
         textView11.setText(name);
         TextView textView13 = (TextView) view.findViewById(R.id.textView13);
@@ -36,7 +39,7 @@ public class MyAccount extends Fragment implements View.OnClickListener {
         TextView textView15 = (TextView) view.findViewById(R.id.textView15);
         textView15.setText(password);
         TextView textView17 = (TextView) view.findViewById(R.id.textView17);
-        textView17.setText("" + mob_num);
+        textView17.setText(mob_num+"");
         TextView textView19 = (TextView) view.findViewById(R.id.textView19);
         textView19.setText(email);
         TextView textView21 = (TextView) view.findViewById(R.id.textView21);

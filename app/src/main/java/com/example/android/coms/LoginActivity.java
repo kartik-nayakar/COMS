@@ -1,15 +1,19 @@
 package com.example.android.coms;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.RequestQueue;
@@ -19,20 +23,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-    private ProgressBar cprogress;
+    private ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
+        setContentView(R.layout.activity_login); 
         final EditText etUsername= (EditText) findViewById(R.id.etUsername);
         final EditText etPassword= (EditText) findViewById(R.id.etPassword);
+        final CheckBox cbShowPassword = (CheckBox) findViewById(R.id.cbShowPassword);
 
         final Button bLogin= (Button) findViewById(R.id.bLogin);
-        cprogress = (ProgressBar)findViewById(R.id.progressBar);
-        cprogress.setVisibility(View.GONE);
         final TextView tvRegister = (TextView) findViewById(R.id.tvRegister);
 
+        dialog = ProgressDialog.show(LoginActivity.this, "",
+                "Loading. Please wait...", true);
+        dialog.hide();
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +45,25 @@ public class LoginActivity extends AppCompatActivity {
                 etUsername.getText().clear();
                 etPassword.getText().clear();
                 LoginActivity.this.startActivity(registerIntent);
+            }
+        });
+
+        cbShowPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                int start,end;
+                Log.i("inside checkbox change",""+isChecked);
+                if(!isChecked){
+                    start= etPassword.getSelectionStart();
+                    end= etPassword.getSelectionEnd();
+                    etPassword.setTransformationMethod(new PasswordTransformationMethod());;
+                    etPassword.setSelection(start,end);
+                }else{
+                    start= etPassword.getSelectionStart();
+                    end= etPassword.getSelectionEnd();
+                    etPassword.setTransformationMethod(null);
+                    etPassword.setSelection(start,end);
+                }
             }
         });
 
@@ -55,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(password)) {
                     etPassword.setError("This field can't be empty");
                 } else {
-                    cprogress.setVisibility(View.VISIBLE);
+                    dialog.show();
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -81,12 +105,12 @@ public class LoginActivity extends AppCompatActivity {
                                     ud.address = jaddress;
                                     //********************* Display Home Activity
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    cprogress.setVisibility(View.GONE);
+                                    dialog.hide();
                                     LoginActivity.this.startActivity(intent);
                                     finish();
                                     //********************   TOAST
                                     Context context = getApplicationContext();
-                                    CharSequence text = "Welcome user!";
+                                    CharSequence text = "Welcome "+jusername+"!";
                                     int duration = Toast.LENGTH_SHORT;
                                     Toast toast = Toast.makeText(context, text, duration);
                                     toast.show();
@@ -97,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     .setNegativeButton("Retry", null)
                                                     .create()
                                                     .show();
-                                            cprogress.setVisibility(View.GONE);
+                                            dialog.hide();
 
                                 }
                             } catch (JSONException e) {
