@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -82,10 +83,10 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_logout:
-                        mDrawerLayout.closeDrawers();
-                        Intent intent2 = new Intent(HomeActivity.this, LoginActivity.class);
-                        HomeActivity.this.startActivity(intent2);
-                        finish();
+                                mDrawerLayout.closeDrawers();
+                                Intent intent2 = new Intent(HomeActivity.this, LoginActivity.class);
+                                HomeActivity.this.startActivity(intent2);
+                                finish();
                         break;
 
 

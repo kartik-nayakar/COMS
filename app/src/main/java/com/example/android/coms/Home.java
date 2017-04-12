@@ -14,13 +14,13 @@ import static com.example.android.coms.R.layout.frag_home;
  */
 
 public class Home extends Fragment implements View.OnClickListener {
-
+    Button bLogout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(frag_home, container, false);
         // Inflate the layout for this fragment
-                Button bLogout = (Button) view.findViewById(R.id.bLogout);
+                bLogout = (Button) view.findViewById(R.id.bLogout);
                 bLogout.setOnClickListener(this);
                 Button bMyAccount = (Button) view.findViewById(R.id.bMyAccount);
                 bMyAccount.setOnClickListener(this);
@@ -40,9 +40,15 @@ public class Home extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bLogout:
-                Intent myIntent = new Intent(getActivity(), LoginActivity.class);
-                getActivity().startActivity(myIntent);
-                getActivity().finish();
+                bLogout.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Intent myIntent = new Intent(getActivity(), LoginActivity.class);
+                        getActivity().startActivity(myIntent);
+                        getActivity().finish();
+                        return true;
+                    }
+                });
                 break;
             case R.id.bMyAccount:
                 MyAccount account= new MyAccount();

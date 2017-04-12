@@ -1,19 +1,18 @@
 package com.example.android.coms;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,7 +24,7 @@ import org.json.JSONObject;
  */
 
 public class ChangeDetails extends Fragment implements View.OnClickListener {
-    private ProgressBar cprogress;
+    private ProgressDialog dialog;
     EditText etChangeName, etChangeUsername, etChangePassword, etChangeMobileNumber, etChangeEmail, etChangeAddress;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,8 +41,9 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
         Long mob_num= ud.getMob_num();
         String email= ud.getEmail();
         String address= ud.getAddress();
-        cprogress = (ProgressBar) view.findViewById(R.id.progressBar3);
-        cprogress.setVisibility(View.GONE);
+         dialog = ProgressDialog.show(getActivity(), "",
+                "Loading...", true);
+        dialog.hide();
 
         //*************  Displaying existing details in database
         etChangeName = (EditText) view.findViewById(R.id.etChangeName);
@@ -77,7 +77,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                 fragmentTransaction.commit();
                 break;
             case R.id.bChangeSave:
-                cprogress.setVisibility(View.VISIBLE);
+                dialog.show();
                //************** Updating user details in database
                 long user_id= UserDetails.getUser_id();
                     String name = etChangeName.getText().toString();
@@ -98,7 +98,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    cprogress.setVisibility(View.GONE);
+                    dialog.hide();
                 }
                 else {
                     if (TextUtils.isEmpty(name) || TextUtils.isEmpty(username) || TextUtils.isEmpty(password)
@@ -143,7 +143,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                         }
 
                     } else {
-                        cprogress.setVisibility(View.VISIBLE);
+                        dialog.show();
 
                         Response.Listener<String> responseListener = new Response.Listener<String>() {
 
@@ -163,7 +163,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                                         int duration = Toast.LENGTH_SHORT;
                                         Toast toast = Toast.makeText(context, text, duration);
                                         toast.show();
-                                        cprogress.setVisibility(View.GONE);
+                                        dialog.hide();
 
                                     } else {
                                         Context context = getContext();
@@ -171,6 +171,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
                                         int duration = Toast.LENGTH_SHORT;
                                         Toast toast = Toast.makeText(context, text, duration);
                                         toast.show();
+                                        dialog.hide();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

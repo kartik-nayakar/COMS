@@ -32,7 +32,7 @@
     <TextView
         android:text="Login"
         android:textSize="28dp"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"

@@ -1,5 +1,6 @@
 package com.example.android.coms;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -19,7 +20,7 @@ import org.json.JSONObject;
 
 
 public class RegisterActivity extends AppCompatActivity {
-    private ProgressBar cprogress;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +35,9 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etAddress= (EditText) findViewById(R.id.etAddress);
 
         final Button bRegister = (Button) findViewById(R.id.bRegister);
-        cprogress = (ProgressBar)findViewById(R.id.progressBar2);
-        cprogress.setVisibility(View.GONE);
-
+         dialog = ProgressDialog.show(RegisterActivity.this, "",
+                "Loading...", true);
+        dialog.hide();
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 //**********
                 else {
-                    cprogress.setVisibility(View.VISIBLE);
+                    dialog.show();
 
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
 
@@ -103,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 if (success) {
                                     Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                    cprogress.setVisibility(View.GONE);
+                                    dialog.hide();
                                     RegisterActivity.this.startActivity(loginIntent);
                                     finish();
 
@@ -119,6 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             .setNegativeButton("Retry", null)
                                             .create()
                                             .show();
+                                    dialog.hide();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();

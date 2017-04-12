@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login); 
+        setContentView(R.layout.activity_login);
         final EditText etUsername= (EditText) findViewById(R.id.etUsername);
         final EditText etPassword= (EditText) findViewById(R.id.etPassword);
         final CheckBox cbShowPassword = (CheckBox) findViewById(R.id.cbShowPassword);
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         final TextView tvRegister = (TextView) findViewById(R.id.tvRegister);
 
         dialog = ProgressDialog.show(LoginActivity.this, "",
-                "Loading. Please wait...", true);
+                "Loading...", true);
         dialog.hide();
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override

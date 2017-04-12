@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView23"
@@ -16,10 +21,10 @@
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="78dp"
         android:text="Name:"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
         android:layout_below="@+id/textView23"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -149,29 +154,22 @@
         android:id="@+id/bChangeSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
         android:text="Save"
+        android:layout_marginRight="6dp"
+        android:layout_marginEnd="6dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="47dp"
-        android:layout_marginEnd="47dp" />
+        android:layout_alignRight="@+id/etChangeAddress"
+        android:layout_alignEnd="@+id/etChangeAddress" />
 
     <Button
         android:id="@+id/bChangeBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/bChangeSave"
-        android:layout_toLeftOf="@+id/etChangePassword"
-        android:layout_toStartOf="@+id/etChangePassword"
-        android:text="Back" />
-
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_marginTop="59dp"
         android:layout_below="@+id/etChangeAddress"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/textView29"
+        android:layout_toEndOf="@+id/textView29" />
 
 </RelativeLayout>
+</ScrollView>
