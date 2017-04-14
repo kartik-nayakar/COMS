@@ -1,5 +1,6 @@
 package com.example.android.coms;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,7 +29,7 @@ import static com.example.android.coms.R.id.etReason;
  */
 
 public class Transfer extends Fragment implements View.OnClickListener{
-    ProgressBar cprogress;
+    ProgressDialog dialog;
     EditText etNewAddress,etReason;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,13 +38,15 @@ public class Transfer extends Fragment implements View.OnClickListener{
         etReason = (EditText) view.findViewById(R.id.etReason);
         Button bRequest = (Button) view.findViewById(R.id.bRequest);
         bRequest.setOnClickListener(this);
-        cprogress = (ProgressBar) view.findViewById(R.id.progressBar4);
-        cprogress.setVisibility(View.GONE);
+        dialog = ProgressDialog.show(getActivity(), "",
+                "Please wait a moment.", true);
+        dialog.hide();
         return view;
     }
 
     @Override
     public void onClick(View v) {
+        String user_id = UserDetails.getUser_id()+"";
         String newAddress = etNewAddress.getText().toString();
         String reason = etReason.getText().toString();
         if(TextUtils.isEmpty(newAddress) || TextUtils.isEmpty(reason) || etNewAddress.length()<15 || etReason.length()<10) {
@@ -60,7 +61,7 @@ public class Transfer extends Fragment implements View.OnClickListener{
             }
         }
         else {
-            cprogress.setVisibility(View.VISIBLE);
+            dialog.show();
 
             Response.Listener<String> responseListener = new Response.Listener<String>() {
 
@@ -75,7 +76,7 @@ public class Transfer extends Fragment implements View.OnClickListener{
                             Intent myIntent = new Intent(getActivity(), HomeActivity.class);
                             getActivity().startActivity(myIntent);
                             getActivity().finish();
-                            cprogress.setVisibility(View.GONE);
+                            dialog.hide();
                             Context context = getContext();
                             CharSequence text = "Request Sent!";
                             int duration = Toast.LENGTH_SHORT;
@@ -83,7 +84,7 @@ public class Transfer extends Fragment implements View.OnClickListener{
                             toast.show();
                         } else {
                             Context context = getContext();
-                            cprogress.setVisibility(View.GONE);
+                            dialog.hide();
                             CharSequence text = "Request Failed!";
                             int duration = Toast.LENGTH_SHORT;
                             Toast toast = Toast.makeText(context, text, duration);
@@ -95,7 +96,7 @@ public class Transfer extends Fragment implements View.OnClickListener{
                 }
             };
 
-            TransferRequest transferRequest = new TransferRequest(newAddress, reason, responseListener);
+            TransferRequest transferRequest = new TransferRequest(user_id, newAddress, reason, responseListener);
             RequestQueue queue = Volley.newRequestQueue(getContext());
             queue.add(transferRequest);
         }

@@ -11,13 +11,13 @@
     tools:context="com.example.android.coms.LoginActivity">
 
     <Button
-        android:text="Proceed"
+        android:id="@+id/bLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bLogin"
-        android:layout_marginBottom="17dp"
         android:layout_above="@+id/tvRegister"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:text="Login" />
 
     <TextView
         android:text="Register Here"
@@ -30,15 +30,15 @@
         android:layout_alignEnd="@+id/bLogin" />
 
     <TextView
-        android:text="Login"
-        android:textSize="28dp"
-        android:textColor="@android:color/black"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        android:layout_marginTop="45dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:text="DTH"
+        android:textColor="@color/colorAccent"
+        android:textSize="28dp" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"

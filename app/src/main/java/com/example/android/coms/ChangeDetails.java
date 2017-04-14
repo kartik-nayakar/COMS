@@ -42,7 +42,7 @@ public class ChangeDetails extends Fragment implements View.OnClickListener {
         String email= ud.getEmail();
         String address= ud.getAddress();
          dialog = ProgressDialog.show(getActivity(), "",
-                "Loading...", true);
+                "Please wait a moment.", true);
         dialog.hide();
 
         //*************  Displaying existing details in database

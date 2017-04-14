@@ -13,64 +13,54 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:text="Transfer Details"
-        android:textSize="24dp"/>
-
-    <EditText
-        android:id="@+id/etNewAddress"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24dp" />
+    <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        android:layout_below="@+id/textView33"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="59dp"
+        android:layout_above="@+id/textInputLayout11"
+        android:layout_alignLeft="@+id/textInputLayout11"
+        android:layout_alignStart="@+id/textInputLayout11">
 
-    <EditText
-        android:id="@+id/etReason"
+        <EditText
+            android:id="@+id/etNewAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView33"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="96dp"
+            android:ems="10"
+            android:hint="Enter New Address"
+            android:inputType="textPostalAddress" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etNewAddress"
-        android:layout_alignStart="@+id/etNewAddress"
-        android:layout_below="@+id/etNewAddress"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_marginBottom="97dp"
+        android:id="@+id/textInputLayout11"
+        android:layout_above="@+id/bRequest"
+        android:layout_centerHorizontal="true">
 
+        <EditText
+            android:id="@+id/etReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/etNewAddress"
+            android:layout_alignStart="@+id/etNewAddress"
+            android:layout_below="@+id/etNewAddress"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:hint="Reason(Optional)"
+            android:inputType="textPersonName" />
+    </android.support.design.widget.TextInputLayout>
     <Button
         android:id="@+id/bRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:text="Request"
-        android:layout_below="@+id/etReason"
+        android:layout_marginBottom="76dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="42dp"
-        android:text="Enter New Address:"
-        android:layout_above="@+id/etReason"
-        android:layout_alignLeft="@+id/etNewAddress"
-        android:layout_alignStart="@+id/etNewAddress" />
-
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etReason"
-        android:layout_alignStart="@+id/etReason"
-        android:layout_below="@+id/etNewAddress"
-        android:layout_marginTop="37dp"
-        android:text="Reason(Optional):" />
-
-    <ProgressBar
-        android:id="@+id/progressBar4"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:layout_below="@+id/etReason"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

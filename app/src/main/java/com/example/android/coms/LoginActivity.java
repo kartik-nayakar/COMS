@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         final TextView tvRegister = (TextView) findViewById(R.id.tvRegister);
 
         dialog = ProgressDialog.show(LoginActivity.this, "",
-                "Loading...", true);
+                "Please wait a moment.", true);
         dialog.hide();
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override

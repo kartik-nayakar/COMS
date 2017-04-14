@@ -13,9 +13,10 @@ public class TransferRequest extends StringRequest {
     private static final String TRANSFER_REQUEST_URL = "https://knayak.000webhostapp.com/transfer.php";
     private Map<String, String> params;
 
-    public TransferRequest(String newAddress, String reason, Response.Listener<String> listener) {
+    public TransferRequest(String user_id, String newAddress, String reason, Response.Listener<String> listener) {
         super(Method.POST, TRANSFER_REQUEST_URL, listener, null);
         params = new HashMap<>();
+        params.put("user_id", user_id);
         params.put("newAddress", newAddress);
         params.put("reason", reason);
     }

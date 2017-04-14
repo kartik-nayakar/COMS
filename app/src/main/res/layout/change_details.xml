@@ -11,11 +11,12 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:text="Change Details"
-        android:textSize="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/textView24"

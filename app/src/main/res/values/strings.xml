@@ -14,5 +14,48 @@
         <item>6 Months</item>
         <item>12 Months</item>
     </string-array>
+    <string-array name= "channel">
+        <item> View Chanels </item>>
+        <item>---English---</item>
+        <item>hbo</item>
+        <item>movies_now</item>
+        <item>axn</item>
+        <item>animal_planet</item>
+        <item>bbc_world</item>
 
+        <item>---Hindi---</item>
+        <item>sony_max</item>
+        <item>star_gold</item>
+        <item>colors</item>
+        <item>discovery</item>
+        <item>ndtv_india</item>
+
+        <item>---Marathi---</item>
+        <item>fakt_marathi</item>
+        <item>zee_talkies</item>
+        <item>colors_marathi</item>
+        <item>historytv_18</item>
+        <item>abp_majha</item>
+
+        <item>---Tamil---</item>
+        <item>star_vijay</item>
+        <item>ktv</item>
+        <item>sun_tv</item>
+        <item>discovery_tamil</item>
+        <item>sun_news</item>
+
+        <item>---Malayalam---</item>
+        <item>asianet_movies</item>
+        <item>surya_movies</item>
+        <item>jeevan</item>
+        <item>safari_tv</item>
+        <item>mathrubhumi_news</item>
+
+        <item>---Telugu---</item>
+        <item>gemini_movies</item>
+        <item>zee_cinemalu</item>
+        <item>etv</item>
+        <item>national_geographic</item>
+        <item>gemini_news</item>
+    </string-array>
 </resources>

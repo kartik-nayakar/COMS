@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class Packages extends Fragment implements View.OnClickListener{
     String rbutton;
+    ArrayList<String> arrayList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.packages,container,false);
@@ -29,14 +30,21 @@ public class Packages extends Fragment implements View.OnClickListener{
         bPay.setOnClickListener(this);
         //******************* spinner to view Months for payment
         Spinner spinner = (Spinner) view.findViewById(R.id.pay_spinner);
+        Spinner spinner2 = (Spinner) view.findViewById(R.id.spinner_packs);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.months_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getContext(),
+                R.array.channel, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+        spinner2.setAdapter(adapter2);
         //*******************
+
+
 
         //*********** Check box
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox);
@@ -49,7 +57,6 @@ public class Packages extends Fragment implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ArrayList<String> arrayList = new ArrayList<String>();
                     arrayList.add("---English---");
                     arrayList.add("");
                 }
@@ -60,7 +67,6 @@ public class Packages extends Fragment implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ArrayList<String> arrayList = new ArrayList<String>();
                     arrayList.add("---Hindi---");
                     arrayList.add("");
                 }
@@ -71,7 +77,6 @@ public class Packages extends Fragment implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ArrayList<String> arrayList = new ArrayList<String>();
                     arrayList.add("---Marathi---");
                     arrayList.add("");
                 }
@@ -82,7 +87,6 @@ public class Packages extends Fragment implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ArrayList<String> arrayList = new ArrayList<String>();
                     arrayList.add("---Tamil---");
                     arrayList.add("");
                 }
@@ -93,7 +97,6 @@ public class Packages extends Fragment implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ArrayList<String> arrayList = new ArrayList<String>();
                     arrayList.add("---Malayalam---");
                     arrayList.add("");
                 }
@@ -104,23 +107,12 @@ public class Packages extends Fragment implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    ArrayList<String> arrayList = new ArrayList<String>();
                     arrayList.add("---Telugu---");
                     arrayList.add("");
                 }
             }
         });
         //************
-
-        //***************** spinner to view channel packs
-    /*    Spinner spinner1 = (Spinner) view.findViewById(R.id.spinner_packs);
-        ArrayList<String> arrayList = new ArrayList<>();
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, );
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(arrayAdapter);
-        spinner1.setSelection(0);
-    */    /// /*****************
-
         //*********** radio button
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
