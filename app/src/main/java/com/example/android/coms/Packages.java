@@ -37,18 +37,13 @@ public class Packages extends Fragment implements View.OnClickListener, MultiSel
         bPay.setOnClickListener(this);
         //******************* spinner to view Months for payment
         Spinner spinner = (Spinner) view.findViewById(R.id.pay_spinner);
-        //Spinner spinner2 = (Spinner) view.findViewById(R.id.spinner_packs);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.months_array, android.R.layout.simple_spinner_item);
-        //ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getContext(),
-        //        R.array.channel, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-       // spinner2.setAdapter(adapter2);
         //*******************
 
         //*********** radio button
