@@ -2,23 +2,26 @@ package com.example.android.coms;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import static com.example.android.coms.R.layout.frag_home;
 
 /**
  * Created by Knayak on 25/03/2017.
  */
 
 public class Home extends Fragment implements View.OnClickListener {
+    CoordinatorLayout coordinatorLayout;
     Button bLogout;
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(frag_home, container, false);
+        view = inflater.inflate(R.layout.frag_home, container, false);
         // Inflate the layout for this fragment
                 bLogout = (Button) view.findViewById(R.id.bLogout);
                 bLogout.setOnClickListener(this);
@@ -32,7 +35,7 @@ public class Home extends Fragment implements View.OnClickListener {
                 bOffers.setOnClickListener(this);
                 Button bTransfer = (Button) view.findViewById(R.id.bTransfer);
                 bTransfer.setOnClickListener(this);
-
+                coordinatorLayout = (CoordinatorLayout) view.findViewById(R.id.coordinatorLayout);
         return view;
     }
 
@@ -40,6 +43,9 @@ public class Home extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bLogout:
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, "Long Press to Logout!", Snackbar.LENGTH_LONG);
+                snackbar.show();
+
                 bLogout.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
@@ -51,40 +57,46 @@ public class Home extends Fragment implements View.OnClickListener {
                 });
                 break;
             case R.id.bMyAccount:
-                MyAccount account= new MyAccount();
+                MyAccount account = new MyAccount();
                 this.getFragmentManager().beginTransaction()
                         .replace(R.id.frame_container, account, null)
                         .addToBackStack(null)
                         .commit();
+                HomeActivity.changeDrawerItem(1);
                 break;
             case R.id.bPacks:
-                Packages packs= new Packages();
+                Packages packs = new Packages();
                 this.getFragmentManager().beginTransaction()
                         .replace(R.id.frame_container, packs, null)
                         .addToBackStack(null)
                         .commit();
+                HomeActivity.changeDrawerItem(2);
                 break;
             case R.id.bRecharge:
-                Recharge recharge= new Recharge();
+                Recharge recharge = new Recharge();
                 this.getFragmentManager().beginTransaction()
                         .replace(R.id.frame_container, recharge, null)
                         .addToBackStack(null)
                         .commit();
+                HomeActivity.changeDrawerItem(3);
                 break;
             case R.id.bOffers:
-                Offers offers= new Offers();
+                Offers offers = new Offers();
                 this.getFragmentManager().beginTransaction()
                         .replace(R.id.frame_container, offers, null)
                         .addToBackStack(null)
                         .commit();
+                HomeActivity.changeDrawerItem(4);
                 break;
             case R.id.bTransfer:
-                Transfer transfer= new Transfer();
+                Transfer transfer = new Transfer();
                 this.getFragmentManager().beginTransaction()
                         .replace(R.id.frame_container, transfer, null)
                         .addToBackStack(null)
                         .commit();
+                HomeActivity.changeDrawerItem(5);
                 break;
         }
     }
+
 }

@@ -1,8 +1,9 @@
 package com.example.android.coms;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
@@ -31,9 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etUsername= (EditText) findViewById(R.id.etUsername);
         final EditText etPassword= (EditText) findViewById(R.id.etPassword);
         final CheckBox cbShowPassword = (CheckBox) findViewById(R.id.cbShowPassword);
-
         final Button bLogin= (Button) findViewById(R.id.bLogin);
         final TextView tvRegister = (TextView) findViewById(R.id.tvRegister);
+
 
         dialog = ProgressDialog.show(LoginActivity.this, "",
                 "Please wait a moment.", true);
@@ -80,6 +80,19 @@ public class LoginActivity extends AppCompatActivity {
                     etPassword.setError("This field can't be empty");
                 } else {
                     dialog.show();
+                    new Handler().postDelayed(new Runnable(){
+                        @Override
+                        public void run() {
+                            if(LoginActivity.class.equals(this)) {
+                                dialog.hide();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                builder.setMessage("Connection Timed Out!")
+                                        .setNegativeButton("Retry", null)
+                                        .create()
+                                        .show();
+                            }
+                        }
+                    }, 30000);
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -108,12 +121,6 @@ public class LoginActivity extends AppCompatActivity {
                                     dialog.hide();
                                     LoginActivity.this.startActivity(intent);
                                     finish();
-                                    //********************   TOAST
-                                    Context context = getApplicationContext();
-                                    CharSequence text = "Welcome "+jusername+"!";
-                                    int duration = Toast.LENGTH_SHORT;
-                                    Toast toast = Toast.makeText(context, text, duration);
-                                    toast.show();
                                     //*******************
                                 } else {
                                             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);

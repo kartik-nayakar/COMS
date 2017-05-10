@@ -1,203 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/packages">
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Choose the best for you"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="32dp"
-        android:layout_toLeftOf="@+id/bPay"
-        android:layout_toStartOf="@+id/bPay"
-        android:text="Select Product:"
-        android:textSize="18dp" />
-
-    <View
+    <RelativeLayout android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:id="@+id/packageMain"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
-        android:text="Select Region:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="22dp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_below="@+id/checkBox5"
-        android:layout_marginTop="18dp"
-        android:text="Channels:"
-        android:textSize="18dp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_packs"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_alignLeft="@+id/checkBox5"
-        android:layout_alignStart="@+id/checkBox5"
-        android:layout_alignRight="@+id/checkBox6"
-        android:layout_alignEnd="@+id/checkBox6" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_below="@+id/spinner_packs"
-        android:layout_marginTop="26dp"
-        android:text="Pay for:"
-        android:textSize="18dp" />
-
-    <Button
-        android:text="Pay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bPay"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioGroup"
-        android:orientation="horizontal"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp">
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
+        <RelativeLayout android:id="@+id/packages1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/radioButton"
-            android:layout_alignLeft="@+id/radioGroup"
-            android:layout_alignStart="@+id/radioGroup"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="50dp"
-            android:text="SD" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Choose the best for you"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/radioGroup"
+                android:layout_alignStart="@+id/radioGroup"
+                android:layout_below="@+id/textView"
+                android:layout_marginTop="40dp"
+                android:text="Select Product:"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/spinner_packs"
+                android:layout_alignStart="@+id/spinner_packs"
+                android:layout_below="@+id/radioGroup"
+                android:layout_marginTop="33dp"
+                android:text="Select Language(s):"
+                android:textSize="18sp" />
+
+            <com.example.android.coms.MultiSelectionSpinner
+                android:id="@+id/spinner_packs"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_packs"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:text="View Channels" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView4"
+                android:layout_alignStart="@+id/textView4"
+                android:layout_below="@+id/textView3"
+                android:layout_marginTop="21dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/radioButton"
+                    android:layout_alignLeft="@+id/radioGroup"
+                    android:layout_alignStart="@+id/radioGroup"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="50dp"
+                    android:text="SD" />
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/bPay"
+                    android:layout_alignRight="@+id/bPay"
+                    android:layout_alignTop="@+id/textView3"
+                    android:layout_marginLeft="5dp"
+                    android:text="HD" />
+
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/packages2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/bPay"
-            android:layout_alignRight="@+id/bPay"
-            android:layout_alignTop="@+id/textView3"
-            android:layout_marginLeft="5dp"
-            android:text="HD" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/packages1">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/pay_spinner"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/pay_spinner"
+                android:layout_marginTop="21dp"
+                android:text="Pay for:"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/pay_spinner"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView6"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+
+            <Button
+                android:id="@+id/bPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/pay_spinner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="52dp"
+                android:text="Pay" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 
-    </RadioGroup>
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="English"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_alignLeft="@+id/radioGroup"
-        android:layout_alignStart="@+id/radioGroup" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hindi"
-        android:layout_alignBaseline="@+id/checkBox"
-        android:layout_alignBottom="@+id/checkBox"
-        android:layout_alignLeft="@+id/checkBox4"
-        android:layout_alignStart="@+id/checkBox4" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marathi"
-        android:layout_alignBaseline="@+id/checkBox4"
-        android:layout_alignBottom="@+id/checkBox4"
-        android:layout_alignLeft="@+id/checkBox"
-        android:layout_alignStart="@+id/checkBox" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tamil"
-        android:layout_below="@+id/checkBox2"
-        android:layout_alignLeft="@+id/checkBox6"
-        android:layout_alignStart="@+id/checkBox6"
-        android:layout_marginTop="16dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Malayalam"
-        android:layout_below="@+id/checkBox3"
-        android:layout_alignLeft="@+id/checkBox3"
-        android:layout_alignStart="@+id/checkBox3"
-        android:layout_marginTop="18dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Telugu"
-        android:layout_alignBaseline="@+id/checkBox5"
-        android:layout_alignBottom="@+id/checkBox5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp" />
-
-    <Spinner
-        android:id="@+id/pay_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/spinner_packs"
-        android:layout_alignLeft="@+id/spinner_packs"
-        android:layout_alignRight="@+id/spinner_packs"
-        android:layout_alignStart="@+id/spinner_packs"
-        android:layout_alignTop="@+id/textView6" />
-
-</RelativeLayout>
+</ScrollView>
